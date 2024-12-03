@@ -1,0 +1,61 @@
+name: build and release latex cv
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # allow manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v3
+
+    - name: install teX live
+      run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+    - name: determine new version
+      id: get_version
+      run: |
+        git fetch --tags
+        
+        # default to v0.0.0 if no tags exist
+        latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+        
+        major=$(echo $latest_tag | cut -d'.' -f1 | tr -d 'v')
+        minor=$(echo $latest_tag | cut -d'.' -f2)
+        patch=$(echo $latest_tag | cut -d'.' -f3)
+
+        # increment version
+        new_patch=$((patch + 1))
+        new_version="v${major}.${minor}.${new_patch}"
+
+        echo "new version: $new_version"
+        echo "version=$new_version" >> $GITHUB_ENV
+
+    - name: compile laTeX document
+      run: make
+
+    - name: create github release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ env.version }}
+        release_name: "KaplanKylaCV"
+        body: "automatically generated release."
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: upload pdf to release
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: KaplanKyla_CV.pdf
+        asset_name: KaplanKyla_CV.pdf
+        asset_content_type: application/pdf
