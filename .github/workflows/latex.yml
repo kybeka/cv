@@ -1,16 +1,14 @@
-name: Build and Release LaTeX CV
+name: build cv 
 
 on:
   push:
     branches:
       - main
-    tags:
-      - '*'  
   workflow_dispatch: # allow manual triggering
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     permissions:
       contents: write   
@@ -20,46 +18,47 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v3
 
+    - name: cache teX live
+      id: cache-texlive
+      uses: actions/cache@v3
+      with:
+        path: /usr/local/texlive
+        key: texlive-${{ runner.os }}-${{ hashFiles('main.tex') }}
+        restore-keys: |
+          texlive-${{ runner.os }}
+
+    - name: install teX live (if not cached)
+      if: steps.cache-texlive.outputs.cache-hit != 'true'
+      run: sudo apt-get update && sudo apt-get install -y texlive-full
+
     - name: determine new version
       id: get_version
-      if: "!startsWith(github.ref, 'refs/tags/')" 
       run: |
         git fetch --tags
-
-        # Default to v0.0.0 if no tags exist
+        
+        # default to v0.0.0 if no tags exist
         latest_tag=$(git tag --sort=-v:refname | head -n 1 || echo "v0.0.0")
-
+        
         major=$(echo $latest_tag | cut -d'.' -f1 | tr -d 'v')
         minor=$(echo $latest_tag | cut -d'.' -f2)
         patch=$(echo $latest_tag | cut -d'.' -f3)
-
-        # Increment version
+        
+        # increment version
         new_patch=$((patch + 1))
         new_version="v${major}.${minor}.${new_patch}"
 
-        echo "New version: $new_version"
+        echo "new version: $new_version"
         echo "version=$new_version" >> $GITHUB_ENV
 
     - name: compile laTeX document
-      uses: xu-cheng/latex-action@v3
-      with:
-        root_file: main.tex
-        args: "-jobname=KaplanKyla_CV"
-
-    - name: ensure pdf exists
-      run: |
-        if [ ! -f KaplanKyla_CV.pdf ]; then
-          echo "Error: compiled PDF not found!"
-          exit 1
-        fi
+      run: make -B  # Forces LaTeX to recompile fully
 
     - name: create github release
       id: create_release
       uses: actions/create-release@v1.1.4
-      if: "!startsWith(github.ref, 'refs/tags/')"
       with:
         tag_name: ${{ env.version }}
-        release_name: "KaplanKyla CV ${{ env.version }}"
+        release_name: "${{ env.version }}"
         body: "automatically generated release."
         draft: false
         prerelease: false
@@ -67,10 +66,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: upload pdf to release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/') || steps.create_release.outputs.upload_url
+      uses: actions/upload-release-asset@v1
       with:
-        files: KaplanKyla_CV.pdf
-        body: "Curriculum Vitae compiled from LaTeX."
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: KaplanKyla_CV.pdf
+        asset_name: KaplanKyla_CV.pdf
+        asset_content_type: application/pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
