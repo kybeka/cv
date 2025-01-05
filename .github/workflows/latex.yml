@@ -44,6 +44,7 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: main.tex
+        args: "-jobname=KaplanKyla_CV"
 
     - name: ensure pdf exists
       run: |
@@ -55,7 +56,7 @@ jobs:
     - name: create github release
       id: create_release
       uses: actions/create-release@v1.1.4
-      if: "!startsWith(github.ref, 'refs/tags/')" # Only create a release if not triggered by a tag push
+      if: "!startsWith(github.ref, 'refs/tags/')"
       with:
         tag_name: ${{ env.version }}
         release_name: "KaplanKyla CV ${{ env.version }}"
@@ -69,7 +70,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/') || steps.create_release.outputs.upload_url
       with:
-        files: cv.pdf
+        files: KaplanKyla_CV.pdf
         body: "Curriculum Vitae compiled from LaTeX."
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
