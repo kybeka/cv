@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - '*'  
   workflow_dispatch: # allow manual triggering
 
 jobs:
@@ -15,20 +17,18 @@ jobs:
       packages: write   
 
     steps:
-    - name: Checkout Repository
+    - name: checkout repository
       uses: actions/checkout@v3
 
-    - name: Install TeX Live
-      run: sudo apt-get update && sudo apt-get install -y texlive-full
-
-    - name: Determine New Version
+    - name: determine new version
       id: get_version
+      if: "!startsWith(github.ref, 'refs/tags/')" 
       run: |
         git fetch --tags
-        
+
         # Default to v0.0.0 if no tags exist
-        latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
-        
+        latest_tag=$(git tag --sort=-v:refname | head -n 1 || echo "v0.0.0")
+
         major=$(echo $latest_tag | cut -d'.' -f1 | tr -d 'v')
         minor=$(echo $latest_tag | cut -d'.' -f2)
         patch=$(echo $latest_tag | cut -d'.' -f3)
@@ -40,27 +40,36 @@ jobs:
         echo "New version: $new_version"
         echo "version=$new_version" >> $GITHUB_ENV
 
-    - name: Compile LaTeX Document
-      run: make
+    - name: compile laTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
 
-    - name: Create GitHub Release
+    - name: ensure pdf exists
+      run: |
+        if [ ! -f cv.pdf ]; then
+          echo "Error: compiled PDF not found!"
+          exit 1
+        fi
+
+    - name: create github release
       id: create_release
       uses: actions/create-release@v1.1.4
+      if: "!startsWith(github.ref, 'refs/tags/')" # Only create a release if not triggered by a tag push
       with:
         tag_name: ${{ env.version }}
-        release_name: "${{ env.version }}"
-        body: "Automatically generated release."
+        release_name: "KaplanKyla CV ${{ env.version }}"
+        body: "automatically generated release."
         draft: false
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Upload PDF to Release
-      uses: actions/upload-release-asset@v1
+    - name: upload pdf to release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/') || steps.create_release.outputs.upload_url
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: KaplanKyla_CV.pdf
-        asset_name: KaplanKyla_CV.pdf
-        asset_content_type: application/pdf
+        files: cv.pdf
+        body: "Curriculum Vitae compiled from LaTeX."
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
