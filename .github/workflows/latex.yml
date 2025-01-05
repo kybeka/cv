@@ -47,7 +47,7 @@ jobs:
 
     - name: ensure pdf exists
       run: |
-        if [ ! -f cv.pdf ]; then
+        if [ ! -f KaplanKyla_CV.pdf ]; then
           echo "Error: compiled PDF not found!"
           exit 1
         fi
