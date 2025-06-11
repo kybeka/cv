@@ -1,3 +1,5 @@
+%------------------------
+
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{graphicx}
@@ -97,6 +99,8 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+
+
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -114,31 +118,30 @@
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
+  
     \resumeSubheading
-      {Universit\`a della Svizzera italiana}{Lugano, Switzerland}
-      {Bachelor of Science in Informatics, GPA 7.4/10}{Sep. 2021 -- Jan. 2025}
+          {Universit\`a della Svizzera italiana}{Lugano, Switzerland}
+          {\vspace{-0.7em}}{}  
+          \vspace{-0.7em}
+          \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+            \textit{\small Master of Science in Financial Technology \& Computing} & \textit{\small Jan. 2025 -- Jan. 2027 (exp.)} \\
+            \textit{\small Bachelor of Science in Informatics} & \textit{\small Sep. 2021 -- Jan. 2025} \\
+          \end{tabular*}
+      
       \resumeItemListStart
-        \resumeItem{For my Bachelor thesis I worked with \href{https://www.lifeware.ch/}{\textit{Lifeware}} and the team behind \href{https://gtoolkit.com/}{Glamorous Toolkit (GT)} to redesign internal software tools for a proprietary codebase. Paper is available \href{https://www.inf.usi.ch/lanza/Downloads/BSc/Kapl2024a.pdf}{\underline{here}}. Participation at ESUG 2024 in Lille, France is seen \href{https://esug.org/2024-Conference/awardsSubmissions.html}{\underline{here}}.}
-        \resumeItem{\textbf{Specialization}: Machine Learning}
-        
-    \resumeItemListEnd
-    \resumeSubheading
-      {Givat Haviva International School}{Givat Haviva, Israel}
-      {IB Diploma, final score of 37/45 (top 5\% of grad. class)}{Sep. 2018 -- May 2020}
+        \resumeItem{\textbf{Bachelor Thesis:} worked with \href{https://www.lifeware.ch/}{\textit{Lifeware}} and \href{https://gtoolkit.com/}{\textit{Glamorous Toolkit (GT)}} team to design internal IDE tools for a proprietary legacy codebase. Paper is available \href{https://www.inf.usi.ch/lanza/Downloads/BSc/Kapl2024a.pdf}{\underline{here}}. Participation @ ESUG 2024 is seen \href{https://esug.org/2024-Conference/awardsSubmissions.html}{\underline{here}}.}
+        \resumeItem{\textbf{Focus}: OOP, Numerical Computing, Machine Learning}
+      \resumeItemListEnd
+      
+  %   \resumeSubheading
+  %     {Givat Haviva International School}{Givat Haviva, Israel}
+  %     {IB Diploma, final score of 37/45 (top 5\% of grad. class)}{Sep. 2018 -- May 2020}
   \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Teaching Assistant}{Sep. 2024 -- Present}
-      {\href{https://www.usi.ch/en}{\includegraphics[width=0.5cm, trim={0cm 3cm 0cm 0cm}]{img/usi-icon.png}} Universit\`a della Svizzera italiana}{Lugano, Switzerland}
-      \resumeItemListStart
-        \resumeItem{Supported BSc students in the first-semester course \textit{Programming Fundamentals I}, with responsibilities including grading assignments, providing feedback, and guiding lab sessions in the Lisp-dialect Racket.}
-        
-      \resumeItemListEnd
       
 % -----------Multiple Positions Heading-----------
    % \resumeSubSubheading
@@ -152,13 +155,22 @@
 
     \resumeSubheading
       {Junior Software Engineer}{Dec. 2023 -- Present}
-      {\href{https://www.squarelife.eu/}{\includegraphics[width=0.5cm, trim={0cm 2cm 0cm 0cm}]{img/squarelife-eu.png}} Squarelife, subsidiary of Lifeware SA}{Bioggio, Switzerland}
+      {\href{https://www.squarelife.eu/}{\includegraphics[width=0.5cm, trim={0cm 2cm 0cm 0cm}]{img/squarelife-eu.png}} Squarelife, subsidiary of \href{https://www.lifeware.ch/}{Lifeware}}{Bioggio, Switzerland}
+      % put skills after Lifeware and for each job
+      % make ore bullet points
       \resumeItemListStart
         \resumeItem{Contributing to a full-stack software team developing a CRM/ERP web-based application for the pan-European insurance sector, using the legacy OOP language Smalltalk and adhering to TDD and XP development practices.}
     \resumeItemListEnd
 
+      %   \resumeSubheading
+      % {Teaching Assistant}{Sep. 2024 -- Jan. 2025}
+      % {\href{https://www.usi.ch/en}{\includegraphics[width=0.5cm, trim={0cm 3cm 0cm 0cm}]{usi-icon.png}} Universit\`a della Svizzera italiana}{Lugano, Switzerland}
+      % \resumeItemListStart
+      %   \resumeItem{Supported BSc students in the first-semester course \textit{Programming Fundamentals I}, with responsibilities including grading assignments, providing feedback, and guiding lab sessions in the Lisp-dialect Racket.}
+      % \resumeItemListEnd
+
     \resumeSubheading
-      {Business Systems/Data Analyst}{Jul. 2023 -- Dec. 2023}
+      {Business Systems Data Analyst}{Jul. 2023 -- Dec. 2023}
       {\href{https://www.advantive.com/}{\includegraphics[width=0.4cm, trim={0cm 2cm -1cm 0cm}]{img/advantive.png}}  Advantive}{(Remote) Lugano, Switzerland}
       \resumeItemListStart
         \resumeItem{Managed data migration for company acquisitions and streamlined business processes across departments, enhancing case resolution efficiency by 15\% using tools like NetSuite, Dynamics365, and Salesforce.}
@@ -171,12 +183,12 @@
         \resumeItem{Laid the foundations for a startup CRM/ERP application, leading system design through architecture, data modeling, and scalable workflows, while ensuring cross-functional alignment with business needs.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {IT Support Manager}{Jul. 2020 -- Jul. 2021}
-      {\href{https://droni.org/}{\includegraphics[width=0.4cm, trim={0cm 2cm 0cm 0cm}]{img/droni.png}} DRONI (Georgian National Erasmus+ Office)}{Tbilisi, Georgia}
-      \resumeItemListStart
-        \resumeItem{360° IT support for an office of 20+ employees during pandemic operations.}
-    \resumeItemListEnd
+    % \resumeSubheading
+    %   {IT Support Manager}{Jul. 2020 -- Jul. 2021}
+    %   {\href{https://droni.org/}{\includegraphics[width=0.4cm, trim={0cm 2cm 0cm 0cm}]{droni.png}} DRONI (Georgian National Erasmus+ Office)}{Tbilisi, Georgia}
+    %   \resumeItemListStart
+    %     \resumeItem{360° IT support for an office of 20+ employees during pandemic operations.}
+    % \resumeItemListEnd
 
     \resumeSubheading
       {Data Analyst Intern}{Jul. 2019 -- Sep. 2019}
@@ -201,8 +213,8 @@
         \resumeProjectHeading
           {\textbf{\#herHACK Finalist}}{2022, 2023}
           \resumeItemListStart
-            \resumeItem{Finalist 2023: Ideated a solution for Swiss Post for a new e-EPR medical record system.}
-            \resumeItem{Finalist 2022: Developed a digital solution \& application for UBS Bank, in collaboration with MYBLUEPLANET to promote ESG practices in internal organizations.}
+            \resumeItem{Finalist 2023: Ideated a solution for Swiss Post for a new e-personal medical record system.}
+            \resumeItem{Finalist 2022: Developed a digital solution \& application for UBS, collaboration with MYBLUEPLANET to promote ESG practices in internal organizations.}
           \resumeItemListEnd
 
         % \resumeProjectHeading
@@ -244,7 +256,7 @@
 \section{Skills, Hobbies \& Achievements}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: English (mother tongue), Russian (fluent), French (B1) \& Italian (A2)} \\
+     \textbf{Languages}{: English (mother tongue), Russian (fluent), French (B1) \& beginner in Italian} \\
      \textbf{Certificates}{: NVIDIA DLI's "\textit{Fundamentals of Deep Learning}" 2022, "\textit{Analyze Business Metrics w/ SQL}" 2023} \\
      \textbf{Hobbies}{: HAM Radio License Technician (Call Sign: KN6QCC) 2021, PADI Open Water Scuba Cert., ASA Sailing cert. 2022, 2 time marathoner, avid hiker and snowboarder}
     }}
