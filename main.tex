@@ -1,45 +1,22 @@
-%------------------------
-
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{graphicx}
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-\usepackage[charter]{mathdesign} % Or utopia
-% \usepackage{cmbright}
-% \usepackage{helvet}
-% \renewcommand{\familydefault}{\sfdefault}
-% \renewcommand{\rmdefault}{phv} % Set Helvetica as default text font
+\usepackage[charter]{mathdesign}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -47,27 +24,18 @@
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -75,34 +43,18 @@
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
-
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -112,174 +64,115 @@
     \small (+41) 78 229 14 22 $|$ \href{mailto:kylabkaplan@gmail.com}{\underline{kylabkaplan@gmail.com}} $|$ 
     \href{https://www.linkedin.com/in/kyla-kaplan/}{\underline{linkedin.com/in/kyla-kaplan/}} $|$
     \href{https://github.com/kybeka}{\underline{github.com/kybeka}}
+    
+    \vspace{6pt}
+    \small MSc FinTech student building end-to-end AI systems, from financial infrastructure to embedded computer vision in business and industrial environments
+    \vspace{-6pt}
 \end{center}
 
-% \href{https://feenk.com/}{\textit{feenk}}
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
-  
-    \resumeSubheading
-          {Universit\`a della Svizzera italiana}{Lugano, Switzerland}
-          {\vspace{-0.7em}}{}  
-          \vspace{-0.7em}
-          \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-            \textit{\small Master of Science in Financial Technology \& Computing} & \textit{\small Jan. 2025 -- Jan. 2027 (exp.)} \\
-            \textit{\small Bachelor of Science in Informatics} & \textit{\small Sep. 2021 -- Jan. 2025} \\
-          \end{tabular*}
-      
-      \resumeItemListStart
-        \resumeItem{\textbf{Bachelor Thesis:} worked with \href{https://www.lifeware.ch/}{\textit{Lifeware}} and \href{https://gtoolkit.com/}{\textit{Glamorous Toolkit (GT)}} team to design internal IDE tools for a proprietary legacy codebase. Paper is available \href{https://www.inf.usi.ch/lanza/Downloads/BSc/Kapl2024a.pdf}{\underline{here}}. Participation @ ESUG 2024 is seen \href{https://esug.org/2024-Conference/awardsSubmissions.html}{\underline{here}}.}
-        \resumeItem{\textbf{Focus}: OOP, Numerical Computing, Machine Learning}
-      \resumeItemListEnd
-      
-  %   \resumeSubheading
-  %     {Givat Haviva International School}{Givat Haviva, Israel}
-  %     {IB Diploma, final score of 37/45 (top 5\% of grad. class)}{Sep. 2018 -- May 2020}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
 
+  \resumeSubheading
+    {Università della Svizzera italiana}{Lugano, Switzerland}
+    {Master of Science in Financial Technology \& Computing}{Jan. 2025 -- Jan. 2027 (exp.)}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Machine Learning, Distributed Systems, Financial Econometrics, Risk Management}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Università della Svizzera italiana}{Lugano, Switzerland}
+    {Bachelor of Science in Informatics}{Sep. 2021 -- Jan. 2025}
+  \resumeItemListStart
+    \resumeItem{\textbf{Bachelor Thesis:} Developed internal tools for Lifeware; integrating data visualization and analytics for programming \& financial datasets.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-      
-% -----------Multiple Positions Heading-----------
-   % \resumeSubSubheading
-   %  {Software Engineer I}{Oct 2014 - Sep 2016}
-   %  \resumeItemListStart
-   %     \resumeItem{Apache Beam}
-   %       {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-   %  \resumeItemListEnd
-   % \resumeSubHeadingListEnd
-%-------------------------------------------
 
     \resumeSubheading
-      {Junior Software Engineer}{Dec. 2023 -- Present}
-      {\href{https://www.squarelife.eu/}{\includegraphics[width=0.5cm, trim={0cm 2cm 0cm 0cm}]{img/squarelife-eu.png}} Squarelife, subsidiary of \href{https://www.lifeware.ch/}{Lifeware}}{Bioggio, Switzerland}
-      % put skills after Lifeware and for each job
-      % make ore bullet points
+      {Software Engineer}{Dec. 2023 -- Present}
+      {Squarelife (subsidiary of Lifeware)}{Bioggio, Switzerland}
       \resumeItemListStart
-        \resumeItem{Contributing to a full-stack software team developing a CRM/ERP web-based application for the pan-European insurance sector, using the legacy OOP language Smalltalk and adhering to TDD and XP development practices.}
-    \resumeItemListEnd
-
-      %   \resumeSubheading
-      % {Teaching Assistant}{Sep. 2024 -- Jan. 2025}
-      % {\href{https://www.usi.ch/en}{\includegraphics[width=0.5cm, trim={0cm 3cm 0cm 0cm}]{usi-icon.png}} Universit\`a della Svizzera italiana}{Lugano, Switzerland}
-      % \resumeItemListStart
-      %   \resumeItem{Supported BSc students in the first-semester course \textit{Programming Fundamentals I}, with responsibilities including grading assignments, providing feedback, and guiding lab sessions in the Lisp-dialect Racket.}
-      % \resumeItemListEnd
+        \resumeItem{Built CRM/ERP modules for a pan-European insurance platform handling multi-country policy and client data.}
+        \resumeItem{Automated underwriting and back-office processes in Smalltalk, reducing manual processing and error-prone workflows.}
+        \resumeItem{Implemented regulatory and compliance systems, including tax reporting in 3+ countries, FMA requirements (Liste A), and SOC 2 guidelines.}
+      \resumeItemListEnd
 
     \resumeSubheading
       {Business Systems Data Analyst}{Jul. 2023 -- Dec. 2023}
-      {\href{https://www.advantive.com/}{\includegraphics[width=0.4cm, trim={0cm 2cm -1cm 0cm}]{img/advantive.png}}  Advantive}{(Remote) Lugano, Switzerland}
+      {Advantive}{Remote – Lugano, Switzerland}
       \resumeItemListStart
-        \resumeItem{Managed data migration for company acquisitions and streamlined business processes across departments, enhancing case resolution efficiency by 15\% using tools like NetSuite, Dynamics365, and Salesforce.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Junior Project Manager}{Jan. 2023 -- Jul. 2023}
-      {\href{https://project-pulse.online}{\includegraphics[width=0.5cm, trim={0cm 3cm 0cm 0cm}]{img/pulse.png}}  Pulse Project}{(Remote) Lugano, Switzerland}
-      \resumeItemListStart
-        \resumeItem{Laid the foundations for a startup CRM/ERP application, leading system design through architecture, data modeling, and scalable workflows, while ensuring cross-functional alignment with business needs.}
+        \resumeItem{Led migration of legacy data to NetSuite \& Dynamics 365, improving data integrity and ticket resolution speed by 15\%.}
+        % \resumeItem{Automated data cleaning and reporting workflows, saving 10+ hours per week and improving operational visibility.}
       \resumeItemListEnd
 
     % \resumeSubheading
-    %   {IT Support Manager}{Jul. 2020 -- Jul. 2021}
-    %   {\href{https://droni.org/}{\includegraphics[width=0.4cm, trim={0cm 2cm 0cm 0cm}]{droni.png}} DRONI (Georgian National Erasmus+ Office)}{Tbilisi, Georgia}
+    %   {Junior Project Manager}{Jan. 2023 -- Jul. 2023}
+    %   {Pulse Project}{Remote – Lugano, Switzerland}
     %   \resumeItemListStart
-    %     \resumeItem{360° IT support for an office of 20+ employees during pandemic operations.}
-    % \resumeItemListEnd
+    %     \resumeItem{Led architecture and data modeling design for a scalable CRM/ERP system targeting 100+ SME clients.}
+    %     \resumeItem{Defined system workflows and coordinated development to support early-stage product scalability.}
+    %   \resumeItemListEnd
 
     \resumeSubheading
       {Data Analyst Intern}{Jul. 2019 -- Sep. 2019}
-      {\href{https://aviationsystems.arc.nasa.gov/facilities/vms/index.shtml}{\includegraphics[width=0.5cm, trim={0cm 6cm 0cm 0cm}]{img/nasa.png}} NASA (Ames Research Center), via Metis Technology Solutions Inc.}{Moffett Field, CA, USA}
+      {NASA (Ames Research Center), via Metis Technology Solutions Inc.}{Moffett Field, CA, USA}
       \resumeItemListStart
-        \resumeItem{Assisted modeling and visualizing high-fidelity flight simulations in the Vertical Motion Simulator (VMS) at Ames Laboratories as part of a larger project for the US Military.}
-    \resumeItemListEnd
+        \resumeItem{Built visualization models for high-fidelity flight simulations used in pilot training and performance analysis.}
+      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
-
 %-----------PROJECTS-----------
-\section{Hackathons}
-    \resumeSubHeadingListStart
-      
-        \resumeProjectHeading
-          {\textbf{Co-founder of Neural Wave Lugano}}{Oct. 2024}
-          \resumeItemListStart
-            \resumeItem{Helped organize the first AI-focused hackathon of Lugano, fostering collaboration and innovative solutions among 100+ participants across 18 teams, and securing sponsors in the likes of Bosch, Duferco \& Swisscom. See more \href{www.neuralwave.ch}{\underline{here}}.}
-          \resumeItemListEnd
-      
-        \resumeProjectHeading
-          {\textbf{\#herHACK Finalist}}{2022, 2023}
-          \resumeItemListStart
-            \resumeItem{Finalist 2023: Ideated a solution for Swiss Post for a new e-personal medical record system.}
-            \resumeItem{Finalist 2022: Developed a digital solution \& application for UBS, collaboration with MYBLUEPLANET to promote ESG practices in internal organizations.}
-          \resumeItemListEnd
+\section{Leadership \& Projects}
+  \resumeSubHeadingListStart
 
-        % \resumeProjectHeading
-        %   {\textbf{Projects} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{Nov. 2023}
-        %   \resumeItemListStart
-        %     \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
-        %     \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
-        %   \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{MSc Thesis: Deep Learning for Food Label Quality Control (with TIOR SA)}}{Feb. 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Building an embedded computer vision system for real-time food label verification in a production pipeline by designing an end-to-end pipeline from Raspberry Pi image capture to on-device inference under strict latency constraints.}
+        % \resumeItem{Addressing real-world challenges including label mismatch, positioning, and traceability across preparation and distribution stages.}
+      \resumeItemListEnd
 
-        
-          
-    %   \resumeProjectHeading
-    %       {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
-    %       \resumeItemListStart
-    %         \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
-    %         \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
-    %         \resumeItem{Implemented continuous delivery using TravisCI to build the plugin upon new a release}
-    %         \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
-    %       \resumeItemListEnd
-    \resumeSubHeadingListEnd
+    \resumeProjectHeading
+      {\textbf{Google Summer of Code 2025 (with the Pharo Consortium)}}{Jun. 2025 -- Nov. 2025}
+      \resumeItemListStart
+        \resumeItem{Built an open-source real-time computer vision system for the Cormas simulation platform using YOLO and OpenCV with Python–Pharo integration for object detection, tracking, and agent interaction.}
+      \resumeItemListEnd
 
+    \resumeProjectHeading
+      {\textbf{MCP Agent Server for CityFALCON}}{Apr. 2025 -- Jun. 2025}
+      \resumeItemListStart
+        \resumeItem{Developed a Model Context Protocol (MCP) server integrating financial news APIs with LLM agents for automated news retrieval, sentiment analysis, and summarization workflows.}
+      \resumeItemListEnd
 
+    \resumeProjectHeading
+      {\textbf{Co-founder – Neural Wave Lugano 2024 }}{Dec. 2023 -- Oct. 2024}
+      \resumeItemListStart
+        \resumeItem{Organized Lugano’s first AI-focused hackathon, attracting 100+ participants and sponsors including Bosch, Duferco, and Swisscom.}
+      \resumeItemListEnd
 
-%
-%-----------PROGRAMMING SKILLS-----------
+    \resumeProjectHeading
+      {\textbf{\#herHACK Finalist}}{Oct. 2022, Nov. 2023}
+      \resumeItemListStart
+        \resumeItem{Finalist projects in digital health for Swiss Post and ESG applications for UBS bank.}
+      \resumeItemListEnd
 
-% \section{Technical Skills}
-%  \begin{itemize}[leftmargin=0.15in, label={}]
-%     \small{\item{
-%      \textbf{Languages}{: Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R} \\
-%      \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
-%      \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
-%      \textbf{Libraries}{: pandas, NumPy, Matplotlib}
-%     }}
-%  \end{itemize}
+  \resumeSubHeadingListEnd
 
-%-----------OTHER SKILLS-----------
-
-\section{Skills, Hobbies \& Achievements}
+%-----------LANGUAGES-----------
+\section{Languages \& Certifications}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: English (mother tongue), Russian (fluent), French (B1) \& beginner in Italian} \\
-     \textbf{Certificates}{: NVIDIA DLI's "\textit{Fundamentals of Deep Learning}" 2022, "\textit{Analyze Business Metrics w/ SQL}" 2023} \\
-     \textbf{Hobbies}{: HAM Radio License Technician (Call Sign: KN6QCC) 2021, PADI Open Water Scuba Cert., ASA Sailing cert. 2022, 2 time marathoner, avid hiker and snowboarder}
+     \textbf{Languages:} English (native), Russian (fluent), Italian (intermediate) \\
+     \textbf{Certifications:} NVIDIA DLI – \textit{Fundamentals of Deep Learning} (2022), \textit{Analyzing Business Metrics with SQL} (2023) \\
+      \textbf{Hobbies:} HAM Radio License Technician Call Sign: KN6QCC, PADI Open Water Scuba, ASA Sailing Cert., avid climber \& hiker
     }}
  \end{itemize}
 
-
-%-------------------------------------------
 \end{document}
-
-
-% \#herHACK finalist of 2022 for UBS \& 2023 for SwissPost; 
-% \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
-
-
-
-     % \textbf{Events}{: 
-     %                \vspace{-1em} 
-     %                    \begin{itemize}[label={}]
-     %                        \small{\item{
-     %                            \textbf{\#herHACK finalist 2022}{: Developed a digital solution \& application for UBS Bank, in collaboration with MYBLUEPLANET to promote ESG practices in internal organizations.} \\
-     %                            \textbf{\#herHACK finalist 2023}{: Ideated a solution for Swiss Post for a new e-EPR medical record system.} \\
-     %                             \textbf{2024}{: Launched first-edition of Neural Wave Lugano 2024 with teams of students from USI.}
-     %                        }}
-     %                    \end{itemize}
-     %                } 
-     %                \vspace{-1em} 
