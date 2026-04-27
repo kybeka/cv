@@ -1,6 +1,6 @@
 name: Sync CV to portfolio
 
-  on:
+  "on":
     release:
       types: [published]
 
