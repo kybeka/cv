@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    outputs:
+      release_tag: ${{ steps.get_version.outputs.version }}
 
     permissions:
       contents: write   
@@ -49,6 +51,7 @@ jobs:
 
         echo "new version: $new_version"
         echo "version=$new_version" >> $GITHUB_ENV
+        echo "version=$new_version" >> $GITHUB_OUTPUT
 
     - name: compile laTeX document
       run: make -B  # Forces LaTeX to recompile fully
@@ -74,3 +77,12 @@ jobs:
         asset_content_type: application/pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+  sync:
+    needs: build
+    uses: ./.github/workflows/sync-cv-to-portfolio.yml
+    with:
+      release_tag: ${{ needs.build.outputs.release_tag }}
+    secrets:
+      SHIP_REPO_TOKEN: ${{ secrets.SHIP_REPO_TOKEN }}
